@@ -88,13 +88,24 @@
             object-fit: cover;
             bottom: 0;
         }
+
+        .image-case img {
+            position: absolute;
+            width: 100%;
+            height: 150%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            transition: transform 0.2s ease-out;
+            will-change: transform; /* improves performance */
+        }
         /* .image-content {
             will-change: transform;
         } */
 
     </style>
 </head>
-<body class="antialiased">
+< class="antialiased">
     <!-- <div id="wrapper">
         <div id="content"> -->
         <!-- Hero -->
@@ -116,13 +127,13 @@
             
                 <!-- Hero Content -->
                 <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-[hsl(30,100%,10%)] z-2">
-                    <h1 class="text-5xl font-bold mb-4" style="color: var(--bg-dark)">Beautiful Nails, Confident You</h1>
-                    <p class="text-xl mb-8 text-[hsl(30,100%,30%)]" style="color: var(--bg-light)">Elegance in every detail</p>
+                    <h1 class="text-5xl font-bold mb-4" style="color: var(--bg-dark)">Unhas Perfeitas, Você Ainda Mais Confiante</h1>
+                    <p class="text-xl mb-8 text-[hsl(30,100%,30%)]" style="color: var(--bg-light)">Cada detalhe, um toque de elegância</p>
                     <button
                         id="book-btn"
                         class="px-6 py-3 bg-[hsl(30,100%,55%)] text-white rounded-full font-semibold shadow-md transition duration-300 hover:scale-105"
                     >
-                        Book Now
+                        Agende um horário agora
                     </button>
                 </div>
                 <div id="scrolls-down" class="absolute bottom-[4rem] p-2 flex justify-center items-center w-dvw animate-bounce">
@@ -140,35 +151,35 @@
                 style="animation-delay: 0.2s;"
                 data-lag="0.5"
                 >
-                <h2 class="text-3xl font-semibold mb-4">Meet Your Nail Artist</h2>
+                <h2 class="text-3xl font-semibold mb-4">CONHEÇA SUA ARTISTA.</h2>
                 <p class="max-w-2xl mx-auto text-[var(--text-muted)] leading-relaxed">
-                Hi, I'm <strong>Camila</strong> — a passionate manicurist dedicated to transforming nail care into an elegant and relaxing experience.
-                With over 5 years of experience, I combine creativity and precision to help you feel confident and radiant every day.
+                    Olá, eu sou a <strong>Camila</strong> — manicure apaixonada por transformar o cuidado com as unhas em uma experiência de elegância e bem-estar.
+                    Com mais de 5 anos de experiência, uno criatividade e precisão para que você se sinta confiante e radiante todos os dias.
                 </p>
             </section>
 
             <!-- Services -->
             <section class="service-section sticky py-20 px-6 bg-[var(--bg)] fade-in top-0" style="animation-delay: 0.4s; height: 1000px;">
-                <h2 class="text-3xl font-semibold text-center mb-12">Our Services</h2>
+                <h2 class="text-3xl font-semibold text-center mb-12">Nossos Serviços</h2>
                 <div id="card-content" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                     <div id="first-service" class="p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Classic Manicure</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Nail shaping, cuticle care, and polish for timeless beauty.</p>
+                        <h3 class="font-bold text-xl mb-2">Manicure Clássica</h3>
+                        <p class="text-[var(--text-muted)] mb-4">Modelagem das unhas, cuidado das cutículas e esmaltação para uma beleza atemporal.</p>
                         <span class="font-semibold text-lg">$25</span>
                     </div>
                     <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Gel Polish</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Long-lasting shine and rich color that lasts for weeks.</p>
+                        <h3 class="font-bold text-xl mb-2">Esmaltação em Gel</h3>
+                        <p class="text-[var(--text-muted)] mb-4">Um brilho intenso e cores sofisticadas que acompanham sua elegância por semanas.</p>
                         <span class="font-semibold text-lg">$40</span>
                     </div>
                     <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Nail Art</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Creative, hand-painted designs tailored to your personality.</p>
+                        <h3 class="font-bold text-xl mb-2">Design Exclusivo</h3>
+                        <p class="text-[var(--text-muted)] mb-4">Designs exclusivos, pintados à mão, que refletem sua personalidade com elegância.</p>
                         <span class="font-semibold text-lg">from $10</span>
                     </div>
                     <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Spa Treatment</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Hydration and exfoliation for perfectly soft, healthy hands.</p>
+                        <h3 class="font-bold text-xl mb-2">Experiência de Spa</h3>
+                        <p class="text-[var(--text-muted)] mb-4">Hidratação profunda e esfoliação delicada, garantindo mãos suaves e radiantes.</p>
                         <span class="font-semibold text-lg">$30</span>
                     </div>
                 </div>
@@ -176,7 +187,7 @@
 
             <!-- Gallery -->
             <section class="gallery-section py-20 px-6 bg-[var(--bg-light)] text-center fade-in top-0" style="animation-delay: 0.6s;">
-                <h2 class="text-3xl font-semibold mb-12">Gallery</h2>
+                <h2 class="text-3xl font-semibold mb-12">GALERIA</h2>
                 <div class="image-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
                     <div class="image-case relative aspect-square bg-[var(--bg)] rounded-xl shadow-inner hover:scale-105 transition-transform duration-300">
                         <img class="absolute w-full h-[150%]" src="./assets/images/nay.png" alt="">
@@ -200,28 +211,28 @@
             </section>
 
             <!-- Testimonials -->
-            <section class="py-20 px-6 bg-[var(--bg)] text-center fade-in top-0" style="animation-delay: 0.8s;">
-                <h2 class="text-3xl font-semibold mb-12">What Our Clients Say</h2>
+            <section class="py-20 sticky px-6 bg-[var(--bg)] text-center fade-in top-0" style="animation-delay: 0.8s;">
+                <h2 class="text-3xl font-semibold mb-12">O Que os Clientes Dizem.</h2>
                 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <div class="bg-[var(--bg-light)] p-6 rounded-2xl shadow-md hover-float transition-all duration-300">
-                    <p class="text-[var(--text-muted)] mb-4 italic">“My nails have never looked this good! The service was relaxing and professional.”</p>
+                    <p class="text-[var(--text-muted)] mb-4 italic">“Gente, minhas unhas estão incríveis! O atendimento foi ótimo e super relaxante.”</p>
                     <span class="font-semibold">— Carla M.</span>
                 </div>
                 <div class="bg-[var(--bg-light)] p-6 rounded-2xl shadow-md hover-float transition-all duration-300">
-                    <p class="text-[var(--text-muted)] mb-4 italic">“Beautiful work and attention to detail. Highly recommended!”</p>
+                    <p class="text-[var(--text-muted)] mb-4 italic">Trabalho lindo e cheio de atenção aos detalhes. Super recomendo!”</p>
                     <span class="font-semibold">— Fernanda T.</span>
                 </div>
                 <div class="bg-[var(--bg-light)] p-6 rounded-2xl shadow-md hover-float transition-all duration-300">
-                    <p class="text-[var(--text-muted)] mb-4 italic">“I loved the atmosphere and my nails look amazing. I’ll definitely come back!”</p>
+                    <p class="text-[var(--text-muted)] mb-4 italic">“Que lugar gostoso! Minhas unhas ficaram maravilhosas. Vou voltar com certeza!”</p>
                     <span class="font-semibold">— Julia P.</span>
                 </div>
                 </div>
             </section>
         <!-- Booking -->
             <section id="booking" class="py-20 px-6 bg-[var(--bg-light)] text-center fade-in" style="animation-delay: 1s;">
-                <h2 class="text-3xl font-semibold mb-6">Book Your Appointment</h2>
+                <h2 class="text-3xl font-semibold mb-6">Agende o seu Horário Hoje</h2>
                 <p class="max-w-xl mx-auto text-[var(--text-muted)] mb-8">
-                Ready to get the nails you’ve always dreamed of? Fill out the form below or contact us directly through WhatsApp.
+                    Suas unhas perfeitas estão a um passo! Preencha o formulário abaixo ou entre em contato pelo WhatsApp.
                 </p>
                 <form class="max-w-md mx-auto space-y-4">
                     <input type="text" placeholder="Your Name" class="w-full p-3 rounded-md border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-[var(--border)] transition-all duration-200" />
@@ -229,7 +240,7 @@
                     <input type="text" placeholder="Preferred Date" class="w-full p-3 rounded-md border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-[var(--border)] transition-all duration-200" />
                     <textarea placeholder="Additional Notes" class="w-full p-3 rounded-md border border-[var(--border)] focus:outline-none focus:ring-2 focus:ring-[var(--border)] transition-all duration-200"></textarea>
                     <button type="submit" class="btn-primary px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300">
-                        Submit
+                        Agendar
                     </button>
                 </form>
             </section>
@@ -373,10 +384,10 @@
                     ease: "none",
                     scrollTrigger: {
                         trigger: card,
-                        start: "200px 200px",
+                        start: "200px 560px",
                         end: `+=${cardHeight * (cards.length - 1)}`,
                         scrub: true,
-                        // markes: true,
+                        markes: true,
                         // scroller: smoother.wrapper
                     },
                 });
@@ -394,5 +405,21 @@
             // smoother.effects('img', { speed: 'auto' })
 
             </script>
+           <script>
+                const imageCases = document.querySelectorAll('.image-case img');
+                
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                    imageCases.forEach(img => {
+                        const speed = 0.15; // Adjust this value for more or less movement
+                        const offset = img.parentElement.getBoundingClientRect().top + window.scrollY;
+                        const yPos = (scrollTop - offset) * speed;
+                
+                        img.style.transform = `translateY(${yPos}px)`;
+                    });
+                });
+            </script>
+            
 </body>
 </html>
