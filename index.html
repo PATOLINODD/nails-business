@@ -99,9 +99,30 @@
             transition: transform 0.2s ease-out;
             will-change: transform; /* improves performance */
         }
+        .video {
+            z-index: 0;
+        }
         /* .image-content {
             will-change: transform;
         } */
+        .card-service {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-service .video iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            height: 110%;
+            min-width: 110%;
+            min-height: 110%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* makes sure it fills the container */
+            z-index: 0;
+            pointer-events: none; /* allows clicks on overlay content */
+        }
 
     </style>
 </head>
@@ -161,26 +182,99 @@
             <!-- Services -->
             <section class="service-section sticky py-20 px-6 bg-[var(--bg)] fade-in top-0" style="animation-delay: 0.4s; height: 1000px;">
                 <h2 class="text-3xl font-semibold text-center mb-12">Nossos Serviços</h2>
+                
                 <div id="card-content" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <div id="first-service" class="p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Manicure Clássica</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Modelagem das unhas, cuidado das cutículas e esmaltação para uma beleza atemporal.</p>
-                        <span class="font-semibold text-lg">$25</span>
+                    <div id="first-service" class="z-30 card-service relative p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
+                        <!-- Video background -->
+                        <div class="video absolute inset-0 overflow-hidden">
+                            <iframe 
+                                src="https://www.youtube.com/embed/27gwb0ClUSs?autoplay=1&mute=1&controls=0&loop=1&playlist=27gwb0ClUSs&start=40"
+                                title="YouTube video player"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                aria-orientation="vertical">
+                            </iframe>
+                        </div>
+                    
+                        <!-- Overlay for readability -->
+                        <div class="absolute inset-0 bg-[hsla(30,100%,10%,0.5)] z-10"></div>   
+                    
+                        <!-- Card content -->
+                        <div class="relative z-20" style="color: var(--bg-dark)">
+                            <h3 class="font-bold text-xl mb-2">Manicure Clássica</h3>
+                            <p class="mb-4" style="color: var(--bg);">Modelagem das unhas, cuidado das cutículas e esmaltação para uma beleza atemporal.</p>
+                            <span class="font-semibold text-lg">$25</span>
+                        </div>
                     </div>
-                    <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Esmaltação em Gel</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Um brilho intenso e cores sofisticadas que acompanham sua elegância por semanas.</p>
-                        <span class="font-semibold text-lg">$40</span>
+                    
+                    <div class="z-30 card card-service p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
+                        <!-- Video background -->
+                        <div class="video absolute inset-0 overflow-hidden">
+                            <iframe 
+                                src="https://www.youtube.com/embed/rTo_4PqLcTs?autoplay=1&mute=1&controls=0&loop=1&playlist=rTo_4PqLcTs&start=40"
+                                title="YouTube video player"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                aria-orientation="vertical">
+                            </iframe>
+                        </div>
+                    
+                        <!-- Overlay for readability -->
+                        <div class="absolute inset-0 bg-[hsla(30,100%,10%,0.5)] z-10"></div>   
+                        
+                        <div class="relative z-20" style="color: var(--bg-dark)">
+                            <h3 class="font-bold text-xl mb-2">Esmaltação em Gel</h3>
+                            <p class="mb-4" style="color: var(--bg);">Um brilho intenso e cores sofisticadas que acompanham sua elegância por semanas.</p>
+                            <span class="font-semibold text-lg">$40</span>
+                        </div>
                     </div>
-                    <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Design Exclusivo</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Designs exclusivos, pintados à mão, que refletem sua personalidade com elegância.</p>
-                        <span class="font-semibold text-lg">from $10</span>
+                    
+                    <div class="z-30 card card-service p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
+                        <!-- Video background -->
+                        <div class="video absolute inset-0 overflow-hidden">
+                            <iframe 
+                                src="https://www.youtube.com/embed/vGMhop2eprk?autoplay=1&mute=1&controls=0&loop=1&playlist=vGMhop2eprk&start=40"
+                                title="YouTube video player"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                aria-orientation="vertical">
+                            </iframe>
+                        </div>
+                    
+                        <!-- Overlay for readability -->
+                        <div class="absolute inset-0 bg-[hsla(30,100%,10%,0.5)] z-10"></div>   
+                        
+                        <div class="relative z-20" style="color: var(--bg-dark)">
+                            <h3 class="font-bold text-xl mb-2">Design Exclusivo</h3>
+                            <p class="mb-4" style="color: var(--bg);">Designs exclusivos, pintados à mão, que refletem sua personalidade com elegância.</p>
+                            <span class="font-semibold text-lg">from $10</span>
+                        </div>
                     </div>
-                    <div class="card p-6 bg-[var(--bg-light)] rounded-2xl shadow-md border border-[var(--border)] hover-float">
-                        <h3 class="font-bold text-xl mb-2">Experiência de Spa</h3>
-                        <p class="text-[var(--text-muted)] mb-4">Hidratação profunda e esfoliação delicada, garantindo mãos suaves e radiantes.</p>
-                        <span class="font-semibold text-lg">$30</span>
+                    
+                    <div class="z-30 card card-service p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
+                        <!-- Video background -->
+                        <div class="video absolute inset-0 overflow-hidden">
+                            <iframe 
+                                src="https://www.youtube.com/embed/a2aOUf3XDoA?autoplay=1&mute=1&controls=0&loop=1&playlist=a2aOUf3XDoA&start=80"
+                                title="YouTube video player"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                aria-orientation="vertical">
+                            </iframe>
+                        </div>
+                    
+                        <!-- Overlay for readability -->
+                        <div class="absolute inset-0 bg-[hsla(30,100%,10%,0.5)] z-10"></div>   
+                        
+                        <div class="relative z-20" style="color: var(--bg-dark)">
+                            <h3 class="font-bold text-xl mb-2">Experiência de Spa</h3>
+                            <p class="mb-4" style="color: var(--bg);">Hidratação profunda e esfoliação delicada, garantindo mãos suaves e radiantes.</p>
+                            <span class="font-semibold text-lg">$30</span>
+                        </div>
                     </div>
                 </div>
             </section>
