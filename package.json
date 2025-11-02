@@ -1,0 +1,17 @@
+{
+  "name": "nails-business",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bun-plugin-tailwind": "^0.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "tailwindcss": "^4.1.16"
+  }
+}

@@ -1,0 +1,141 @@
+@import "tailwindcss";
+:root {
+    --bg-dark: hsl(30, 100%, 95%);
+    --bg: hsl(30, 100%, 90%);
+    --bg-light: hsl(30, 100%, 85%);
+    --text: hsl(30, 100%, 10%);
+    --text-muted: hsl(30, 100%, 30%);
+    --border: hsl(30, 100%, 55%);
+    --warning: hsl(30, 70%, 65%);
+    --danger: hsl(0, 70%, 65%);
+    --success: hsl(80, 70%, 65%);
+}
+
+/* html, body {
+    overflow: hidden;
+} */
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--border);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--text);
+    transform: scale(1.05);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.hover-float:hover {
+    transform: translateY(-6px);
+    transition: transform 0.3s ease;
+}
+
+#scrolls-down {
+    cursor: pointer;
+    z-index: 10;
+}
+
+.z-mil {
+    z-index: 1000;
+}
+
+.card {
+    --spacing: 9rem;
+    position: relative;
+    box-sizing: border-box;
+    height: calc(100vh - var(--spacing) * 4);
+    width: 88dvw;
+    top: var(--spacing);
+}
+
+.card:nth-child(1) {
+    top: calc(var(--spacing) * 3);
+}
+.card:nth-child(2) {
+    top: calc(var(--spacing) * 3.5);
+}
+.card:nth-child(3) {
+    top: calc(var(--spacing) * 4);
+}
+.card:nth-child(4) {
+    top: calc(var(--spacing) * 4.5);
+}
+
+/* .service-section {
+    margin-bottom: 5rem;
+} */
+
+.image-case {
+    overflow: hidden;
+    object-fit: cover;
+    bottom: 0;
+}
+
+.image-case img {
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: transform 0.2s ease-out;
+    will-change: transform; /* improves performance */
+}
+.video {
+    z-index: 0;
+}
+/* .image-content {
+    will-change: transform;
+} */
+.card-service {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-service .video iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    min-width: 110%;
+    min-height: 110%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* makes sure it fills the container */
+    z-index: 0;
+    pointer-events: none; /* allows clicks on overlay content */
+}
+
+.first-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 140%;
+    min-width: 110%;
+    min-height: 140%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* makes sure it fills the container */
+    z-index: 0;
+    pointer-events: none; /* allows clicks on overlay content */
+}
