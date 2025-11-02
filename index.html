@@ -76,12 +76,29 @@
 
         .card {
             --spacing: 9rem;
+            position: relative;
             box-sizing: border-box;
+            height: calc(100vh - var(--spacing) * 4);
+            width: 88dvw;
+            top: var(--spacing);
+        }
+        
+        .card:nth-child(1) {
+            top: calc(var(--spacing) * 3);
+        }
+        .card:nth-child(2) {
+            top: calc(var(--spacing) * 3.5);
+        }
+        .card:nth-child(3) {
+            top: calc(var(--spacing) * 4);
+        }
+        .card:nth-child(4) {
+            top: calc(var(--spacing) * 4.5);
         }
 
-        .service-section {
-            margin-bottom: 45rem;
-        }
+        /* .service-section {
+            margin-bottom: 5rem;
+        } */
 
         .image-case {
             overflow: hidden;
@@ -123,6 +140,20 @@
             z-index: 0;
             pointer-events: none; /* allows clicks on overlay content */
         }
+        
+        .first-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 110%;
+            height: 140%;
+            min-width: 110%;
+            min-height: 140%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* makes sure it fills the container */
+            z-index: 0;
+            pointer-events: none; /* allows clicks on overlay content */
+        }
 
     </style>
 </head>
@@ -132,7 +163,7 @@
         <!-- Hero -->
             <section class="relative h-screen w-full overflow-hidden">
                 <!-- Background Video -->
-                <div class="absolute top-0 left-0 w-full h-dvh z-0 overflow-hidden">
+                <div class="first-video overflow-hidden">
                     <iframe 
                       class="w-full h-full"
                       src="https://www.youtube.com/embed/IOCeikyqvH4?autoplay=1&mute=1&controls=0&loop=1&playlist=IOCeikyqvH4" 
@@ -168,7 +199,7 @@
             <!-- About -->
             <section 
                 id="about" 
-                class="sticky py-20 px-6 bg-[var(--bg-light)] text-center fade-in top-0" 
+                class="py-20 px-6 bg-[var(--bg-light)] text-center fade-in top-0" 
                 style="animation-delay: 0.2s;"
                 data-lag="0.5"
                 >
@@ -184,7 +215,7 @@
                 <h2 class="text-3xl font-semibold text-center mb-12">Nossos Serviços</h2>
                 
                 <div id="card-content" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <div id="first-service" class="z-30 card-service relative p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
+                    <div id="first-service" class="card card-service relative p-6 rounded-2xl shadow-md border border-[var(--border)] hover-float overflow-hidden">
                         <!-- Video background -->
                         <div class="video absolute inset-0 overflow-hidden">
                             <iframe 
@@ -467,25 +498,37 @@
             // });
 
             // card height + gap between cards
-            const gap = 20; // adjust based on your Tailwind gap (in px)
-            const cardHeight = cards[0].offsetHeight + gap;
+            const gap = -20; // adjust based on your Tailwind gap (in px)
+            const cardHeight = firstCard.offsetHeight + gap;
 
-            cards.forEach((card, i) => {
-                const distanceToMove = cardHeight * (i+1); // how far this card should move up
+            gsap.set('.card', { position: 'absolute' });
+            gsap.to('.card', {
+                yPercent: -140,
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: '.card',
+                    start: "top 900px",
+                    end: `+=700px`,
+                    scrub: true,
+                    markes: true,
+                }
+            })
 
-                gsap.to(card, {
-                    y: () => -distanceToMove,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "200px 560px",
-                        end: `+=${cardHeight * (cards.length - 1)}`,
-                        scrub: true,
-                        markes: true,
-                        // scroller: smoother.wrapper
-                    },
-                });
-            });
+            // cards.forEach((card, i) => {
+
+            //     gsap.to(card, {
+            //         y: () => -distanceToMove,
+            //         ease: "none",
+            //         scrollTrigger: {
+            //             trigger: card,
+            //             start: "200px 560px",
+            //             end: `+=${cardHeight * (cards.length - 1)}`,
+            //             scrub: true,
+            //             markes: true,
+            //             // scroller: smoother.wrapper
+            //         },
+            //     });
+            // });
 
             // =========================================
             //              image section
